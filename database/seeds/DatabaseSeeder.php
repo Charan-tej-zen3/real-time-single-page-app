@@ -11,10 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $this->call(QuestionsTableSeeder::class);
-        $this->call(RepliesTableSeeder::class);
-        $this->call(LikesTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
+        //$this->call(UsersTableSeeder::class);
+        factory(App\User::class, 10)->create();
+        factory(App\Model\Category::class, 5)->create();
+        factory(App\Model\Question::class, 10)->create();
+        factory(App\Model\Reply::class, 50)->create()->each(function ($reply) {
+            $reply->like()->save(factory(App\Model\Like::class)->make());
+        });
+        // factory(App\User::class, 50)->create()->each(function ($user) {
+        //     $user->posts()->save(factory(App\Post::class)->make());
+        // });
     }
 }

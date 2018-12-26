@@ -17,10 +17,10 @@ class CreateRepliesTable extends Migration
             $table->increments('id');
             $table->text('body');
             //LINCKED COLUMNS
-            $table->integer('question_id');
+            $table->integer('question_id')->unsigned();
             $table->integer('user_id');
             //DELETE ALL THE REPLIES WHEN THE CONNECTED QUESTION IS DELETED
-            $table->foreign('question_id')->reference('id')->on('questions')->onDelete('cascade');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Model\Reply;
+use App\Model\Like;
 
 class RepliesTableSeeder extends Seeder
 {
@@ -11,6 +13,8 @@ class RepliesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Reply::class, 50)->create()->each(function($reply){
+            return $reply->like()->save(factory(Like::class)->make());
+        });
     }
 }

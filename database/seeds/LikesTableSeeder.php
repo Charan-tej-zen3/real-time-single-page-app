@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Model\Like;
 
 class LikesTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class LikesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //factory(Like::class, 10)->create();
     }
 }

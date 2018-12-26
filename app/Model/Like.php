@@ -7,13 +7,14 @@ use App\User;
 
 class Like extends Model
 {
-    public function reply()
-    {
-        return $this->belongsTo(Reply::class);
-    }
+    //A LIKE BELONGS TO A REPLY AND USER
+    // public function reply()
+    // {
+    //     return $this->belongsTo(Reply::class);
+    // }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
 }

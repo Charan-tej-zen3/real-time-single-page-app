@@ -7,6 +7,7 @@ use App\User;
 
 class Reply extends Model
 {
+    protected $guarded=[];
     //BELONGS TO A USER, QUESTION AND HAS MANY LIKES.
     public function question()
     {

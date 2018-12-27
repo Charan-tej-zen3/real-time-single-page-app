@@ -7,6 +7,9 @@ use App\User;
 
 class Like extends Model
 {
+    protected $guarded= [];
+
+    
     //A LIKE BELONGS TO A REPLY AND USER
     // public function reply()
     // {
